@@ -15,6 +15,11 @@
 		B57A21821A8D4818005308E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57A21811A8D4818005308E2 /* Images.xcassets */; };
 		B57A21851A8D4818005308E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57A21831A8D4818005308E2 /* LaunchScreen.xib */; };
 		B57A21911A8D4818005308E2 /* FixMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B57A21901A8D4818005308E2 /* FixMeTests.m */; };
+		B57A21A01A8D49E8005308E2 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B57A219B1A8D49E8005308E2 /* 1.jpg */; };
+		B57A21A11A8D49E8005308E2 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B57A219C1A8D49E8005308E2 /* 2.jpg */; };
+		B57A21A21A8D49E8005308E2 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B57A219D1A8D49E8005308E2 /* 3.jpg */; };
+		B57A21A31A8D49E8005308E2 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B57A219E1A8D49E8005308E2 /* 4.jpg */; };
+		B57A21A41A8D49E8005308E2 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B57A219F1A8D49E8005308E2 /* 5.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +48,11 @@
 		B57A218A1A8D4818005308E2 /* FixMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FixMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57A218F1A8D4818005308E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B57A21901A8D4818005308E2 /* FixMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FixMeTests.m; sourceTree = "<group>"; };
+		B57A219B1A8D49E8005308E2 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		B57A219C1A8D49E8005308E2 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		B57A219D1A8D49E8005308E2 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		B57A219E1A8D49E8005308E2 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		B57A219F1A8D49E8005308E2 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,7 @@
 		B57A21711A8D4818005308E2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B57A219A1A8D49E8005308E2 /* Images */,
 				B57A21721A8D4818005308E2 /* Info.plist */,
 				B57A21731A8D4818005308E2 /* main.m */,
 			);
@@ -123,6 +134,18 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		B57A219A1A8D49E8005308E2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B57A219B1A8D49E8005308E2 /* 1.jpg */,
+				B57A219C1A8D49E8005308E2 /* 2.jpg */,
+				B57A219D1A8D49E8005308E2 /* 3.jpg */,
+				B57A219E1A8D49E8005308E2 /* 4.jpg */,
+				B57A219F1A8D49E8005308E2 /* 5.jpg */,
+			);
+			path = Images;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -204,6 +227,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B57A21801A8D4818005308E2 /* Main.storyboard in Resources */,
+				B57A21A41A8D49E8005308E2 /* 5.jpg in Resources */,
+				B57A21A31A8D49E8005308E2 /* 4.jpg in Resources */,
+				B57A21A01A8D49E8005308E2 /* 1.jpg in Resources */,
+				B57A21A11A8D49E8005308E2 /* 2.jpg in Resources */,
+				B57A21A21A8D49E8005308E2 /* 3.jpg in Resources */,
 				B57A21851A8D4818005308E2 /* LaunchScreen.xib in Resources */,
 				B57A21821A8D4818005308E2 /* Images.xcassets in Resources */,
 			);
@@ -417,6 +445,7 @@
 				B57A21961A8D4818005308E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B57A21971A8D4818005308E2 /* Build configuration list for PBXNativeTarget "FixMeTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +454,7 @@
 				B57A21991A8D4818005308E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
