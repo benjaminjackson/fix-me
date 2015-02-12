@@ -11,13 +11,14 @@
 
 @interface MasterViewController ()
 
-@property NSMutableArray *objects;
+@property NSArray *objects;
 @end
 
 @implementation MasterViewController
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.objects = @[@{@"URL" : @"http://nytimes.com"}, @{@"URL" : @"http://wsj.com"}, @{@"URL" : @"http://ft.com"}, @{@"URL" : @"http://grantland.com"}, @{@"URL" : @"http://vicenews.com"}];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,7 +31,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
+        NSDate *object = self.objects[indexPath.row % [self.objects count]];
         [[segue destinationViewController] setDetailItem:object];
     }
 }

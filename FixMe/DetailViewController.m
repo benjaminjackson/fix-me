@@ -8,7 +8,8 @@
 
 #import "DetailViewController.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () <UIWebViewDelegate> {
+}
 
 @end
 
@@ -26,16 +27,32 @@
 }
 
 - (void)configureView {
-    // Update the user interface for the detail item.
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
-    }
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+    NSURL *URL = [NSURL URLWithString:[self.detailItem valueForKey:@"URL"]];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:URL];
+    [webView loadRequest:request];
+    webView.alpha = 0;
+    webView.delegate = self;
+    [self.view addSubview:webView];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)aWebView {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:1 animations:^{
+            aWebView.alpha = 1;
+        } completion:nil];
+    });
 }
 
 - (void)didReceiveMemoryWarning {
