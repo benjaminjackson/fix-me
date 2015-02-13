@@ -17,7 +17,7 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem {
+- (void)setDetailItem:(NSURL *)newDetailItem {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
             
@@ -28,8 +28,7 @@
 
 - (void)configureView {
     UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-    NSURL *URL = [NSURL URLWithString:[self.detailItem valueForKey:@"URL"]];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:URL];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:self.detailItem];
     [webView loadRequest:request];
     webView.alpha = 0;
     webView.delegate = self;
@@ -48,11 +47,17 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    //not sure I see the point in this, since UIView animations happen on the main thread anyway
+    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:1 animations:^{
             aWebView.alpha = 1;
         } completion:nil];
-    });
+    //});
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                                         duration:(NSTimeInterval)duration {
+//I normally don't use storyboarding, so this took more time for me, but I would normally use Masonry or Autolayout DSL to handle changes for orientation
 }
 
 - (void)didReceiveMemoryWarning {
